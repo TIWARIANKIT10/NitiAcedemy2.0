@@ -15,20 +15,21 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="flex-1 text-center md:text-left"
         >
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#1f3c88] leading-tight ">
+         <h1 className="text-5xl   font-extrabold text-[#1f3c88] leading-tight w-full scale-115 ">
+
             Your First Step <br />
             Into the World of <br />
             <span className="text-[#ff6b6b]">IT Starts Here!</span>
           </h1>
 
-          <p className="mt-5 text-gray-600 max-w-lg">
+          <p className="mt-5 text-gray-600 max-w-lg -ml-9">
             Niti Academy is your ultimate destination to proceed into the tech
             world. We offer beginner to advanced courses designed to build strong
             foundations in the tech field.
           </p>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start -ml-9">
             <button className="bg-[#1f3c88] text-white px-6 py-3 rounded-full shadow-md hover:bg-[#162a5f] transition">
               Explore More →
             </button>
@@ -47,26 +48,27 @@ export default function HeroSection() {
         >
           <div className="absolute -z-10 w-[400px] h-[400px] bg-[#1f3c88]/10 rounded-full blur-3xl"></div>
           <Image
-            src="/niti.jpg"
-            alt="Hero Image"
-            width={450}
-            height={450}
-            className="object-contain rounded-xl"
-          />
+  src="/sub.png"
+  alt="Hero Image"
+  width={850}
+  height={850}
+  className="w-full h-full object-contain rounded-xl transform scale-150"
+/>
+
         </motion.div>
 
         
       </div>
-      <div className="relative py-16  overflow-hidden">
+      <div className="relative py-14  ">
       {/* Circular Overlays (Background Decor) */}
      
 
-      <div className="relative z-10 flex flex-col items-center text-center px-4">
-        <h3 className="font-semibold text-2xl text-blue-700 mb-8">Why Choose Our Courses</h3>
-        <div className="flex flex-wrap justify-center gap-6 bg-blue-600 px-12 py-7 rounded-3xl">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 w-full scale-125">
+        <h3 className="font-semibold text-2xl text-blue-700 mb-3">Why Choose Our Courses</h3>
+        <div className="flex flex-wrap justify-center gap-6 bg-[#2565AF] px-12 py-5 rounded-3xl">
           <div className="bg-white rounded-lg p-4 shadow-md flex flex-col items-center w-48 h-24 justify-center bg-opacity-90">
             <LaptopMinimal className="w-8 h-8 text-gray-600 mb-2" />
-            <p className="text-gray-700 text-sm font-medium">Beginner-Friendly Learning</p>
+            <p className="text-gray-700 text-sm font-medium">Beginner-Friendly </p>
           </div>
           <div className="bg-white rounded-lg p-4 shadow-md flex flex-col items-center w-48 h-24 justify-center bg-opacity-90">
             <FolderKanban className="w-8 h-8 text-gray-600 mb-2" />

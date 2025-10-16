@@ -11,13 +11,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] bg-white/20 backdrop-blur-md rounded-full shadow-md flex items-center justify-between px-8 py-3 z-50 max-w-7xl">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] bg-white/20 backdrop-blur-md rounded-full shadow-md flex items-center justify-between px-8 py-3 z-50 max-w-7xl scale-110">
 
       {/* Logo */}
       <div className="flex items-center gap-2">
         <Link href="/">
           <Image
-  src="/niti.jpg"
+  src="/logo.png"
   alt="Niti Academy Logo"
   width={800}
   height={400}
