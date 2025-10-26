@@ -15,7 +15,9 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/user',router);
 
-
+app.get("/",(req,res)=>{
+    res.send("Hellow World");
+})
 
 const port = process.env.PORT || 4080;
 
