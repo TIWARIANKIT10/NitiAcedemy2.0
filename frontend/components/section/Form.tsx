@@ -14,12 +14,12 @@ export default function RegistrationPage() {
   const [success, setSuccess] = useState("");
 
   // Handle input change
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   // Handle form submit
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setSuccess("");
@@ -53,8 +53,9 @@ export default function RegistrationPage() {
       } else {
         setError(data.message || "Something went wrong!");
       }
-    } catch (err) {
-      setError("Failed to connect to the server.");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err);
+      setError(msg || "Failed to connect to the server.");
     }
   };
 
@@ -143,7 +144,7 @@ export default function RegistrationPage() {
               </label>
               <textarea
                 name="query"
-                rows="3"
+                rows={3}
                 value={formData.query}
                 onChange={handleChange}
                 className="w-full border-b border-gray-300 focus:border-cyan-400 outline-none py-2 text-gray-800"

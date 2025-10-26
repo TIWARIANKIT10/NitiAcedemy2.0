@@ -10,13 +10,13 @@ const AboutPage = () => {
             About Us
           </h2>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-snug">
-            Niti Academy: Shaping Tomorrow's IT Leaders in Pokhara
+            Niti Academy: Shaping Tomorrow&apos;s IT Leaders in Pokhara
           </h1>
           <p className="text-gray-700 mb-4 text-lg sm:text-xl">
             At Niti Academy, we are dedicated to shaping the next generation of IT
             leaders in Pokhara. Our comprehensive courses cover the latest
             technologies and industry trends, equipping students with the skills and
-            knowledge needed to excel in today's competitive digital landscape.
+            knowledge needed to excel in today&apos;s competitive digital landscape.
           </p>
           <p className="text-gray-700 mb-8 text-lg sm:text-xl">
             With a focus on hands-on learning and personalized support, we empower

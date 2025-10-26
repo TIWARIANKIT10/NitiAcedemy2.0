@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {LaptopMinimalCheck,BookOpenCheck,UserStar,FolderKanban,LaptopMinimal} from 'lucide-react';
+import {BookOpenCheck,UserStar,FolderKanban,LaptopMinimal} from 'lucide-react';
 
 export default function HeroSection() {
   return (
