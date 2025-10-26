@@ -13,7 +13,7 @@ interface User {
 }
 
 const fetchUsers = async (): Promise<User[]> => {
-  const res = await fetch("http://localhost:4080/api/user", { cache: "no-store" });
+  const res = await fetch("https://niti-acedemy2-0.vercel.app/api/user", { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to fetch users");
   return res.json();
 };
