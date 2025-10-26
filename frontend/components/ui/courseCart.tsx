@@ -19,7 +19,8 @@ export default function CourseCard({
   price = '$199',
 }: CourseCardProps) {
   return (
-    <div className="relative w-[420px] h-[510px] rounded-2xl overflow-hidden shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out ">
+    <div className="relative w-full h-[510px] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out">
+
       {/* Background image */}
       <div className="absolute inset-0">
         <Image src='/cart1.jpg' alt={title} fill className="object-cover" />
@@ -44,14 +45,12 @@ export default function CourseCard({
         </div>
 
         {/* Buttons */}
-        
         <div className="flex gap-3">
-          <Link href="/Contact" className="flex-1 py-2 rounded-full bg-green-500 hover:bg-green-600 hover:text-gray-700 transition text-center">
+         <Link href="/Contact" className="flex-1 py-2 rounded-full bg-green-500 hover:bg-green-600 hover:text-gray-700 transition text-center">
           <button >
             Enroll Now 
           </button>
           </Link>
-         
           <Link
             href={id ? `/Course/${id}` : '#'}
             className="flex-1 py-2 rounded-full bg-[#282828] hover:bg-[#333] border border-gray-600 transition text-center"

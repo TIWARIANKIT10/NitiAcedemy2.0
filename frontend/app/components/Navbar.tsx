@@ -67,7 +67,7 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              href="/courses"
+              href="/Course"
               className="hover:text-[#0056B3] font-medium border-b-2 border-transparent hover:border-[#0056B3]"
               onClick={() => setIsOpen(false)}
             >
@@ -76,36 +76,36 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              href="/pages"
+              href="/gallary"
               className="hover:text-[#0056B3] font-medium border-b-2 border-transparent hover:border-[#0056B3]"
               onClick={() => setIsOpen(false)}
             >
-              Pages
+              Gallary 
             </Link>
           </li>
           <li>
             <Link
-              href="/blogs"
-              className="hover:text-[#0056B3] font-medium border-b-2 border-transparent hover:border-[#0056B3]"
-              onClick={() => setIsOpen(false)}
-            >
-              Blogs
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/contact"
+              href="/Contact"
               className="hover:text-[#0056B3] font-medium border-b-2 border-transparent hover:border-[#0056B3]"
               onClick={() => setIsOpen(false)}
             >
               Contact
             </Link>
           </li>
+          <li>
+            <Link
+              href="/aboutus"
+              className="hover:text-[#0056B3] font-medium border-b-2 border-transparent hover:border-[#0056B3]"
+              onClick={() => setIsOpen(false)}
+            >
+              About Us 
+            </Link>
+          </li>
         </ul>
 
         {/* Register Button */}
         <Link
-          href="/register"
+          href="/Contact"
           className="bg-[#0056B3] text-white px-6 py-2 rounded-full font-medium hover:bg-[#003d80] transition-all text-center"
           onClick={() => setIsOpen(false)}
         >

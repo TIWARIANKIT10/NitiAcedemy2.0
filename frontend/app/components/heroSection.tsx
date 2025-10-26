@@ -30,7 +30,12 @@ export default function HeroSection() {
 
           {/* Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start -ml-9">
-            <button className="bg-[#1f3c88] text-white px-6 py-3 rounded-full shadow-md hover:bg-[#162a5f] transition">
+            <button className="bg-[#1f3c88] text-white px-6 py-3 rounded-full shadow-md hover:bg-[#162a5f] transition " onClick={()=>{
+             window.scrollTo({
+        top: 950,     // scroll position (in px)
+        behavior: "smooth", // makes it smooth
+      });
+            }}>
               Explore More →
             </button>
             <button className="border-2 border-[#1f3c88] text-[#1f3c88] px-6 py-3 rounded-full hover:bg-[#1f3c88] hover:text-white transition">

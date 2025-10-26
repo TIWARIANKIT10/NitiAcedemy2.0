@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Open_Sans, } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Lalezar } from "next/font/google";
+import Footer from "@/components/layout/footer";
+import FloatingFacebook from '@/components/ui/FloatingFacebook' 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +40,9 @@ export default function RootLayout({
       >
         <Navbar/>
         {children}
+       
+        <Footer/>
+        <FloatingFacebook />
       </body>
     </html>
   );
