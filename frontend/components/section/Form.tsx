@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
 
+
 export default function RegistrationPage() {
+  
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -53,6 +55,7 @@ export default function RegistrationPage() {
       } else {
         setError(data.message || "Something went wrong!");
       }
+    
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
       setError(msg || "Failed to connect to the server.");

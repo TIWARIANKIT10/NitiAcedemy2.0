@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Open_Sans, } from "next/font/google";
 import "./globals.css";
@@ -5,7 +6,7 @@ import Navbar from "./components/Navbar";
 import { Lalezar } from "next/font/google";
 import Footer from "@/components/layout/footer";
 import FloatingFacebook from '@/components/ui/FloatingFacebook' 
-
+import ClientLayout from "./components/ClientLayout";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,17 +33,14 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) { 
   return (
     <html lang="en">
       <body className={`${openSans.variable} font-sans bg-gradient-to-r from-[#c6d3e6] to-[#79b4f3]`}
         
       >
-        <Navbar/>
-        {children}
-       
-        <Footer/>
-        <FloatingFacebook />
+        <ClientLayout>{children}</ClientLayout>
+        
       </body>
     </html>
   );

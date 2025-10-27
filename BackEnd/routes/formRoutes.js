@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { submitForm,getForms } from "../controllers/formController.js";
+import { submitForm,getForms,logindata ,authenticate} from "../controllers/formController.js";
 
 const router = Router();
 
 router.post("/",submitForm );
-router.get("/",getForms);
-
+router.get("/",authenticate,getForms);
+router.post("/admin",logindata)
 export default router;
