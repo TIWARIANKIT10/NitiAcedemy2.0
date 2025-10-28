@@ -36,7 +36,7 @@ export const logindata = async(req,res) => {
       httpOnly: true,
       sameSite: "none",
 
-      secure: false,  // enable in production (HTTPS)
+      secure: true,  // enable in production (HTTPS)
       maxAge: 1000 * 60 * 60 // match expiry (1 hour)
     });
     // send the token in JSON as well so the frontend can store/use it (useful in dev)
