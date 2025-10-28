@@ -1,5 +1,6 @@
-// app/admin/page.tsx
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 
 interface User {
   _id: string;
@@ -12,17 +13,24 @@ interface User {
   __v: number;
 }
 
-const fetchUsers = async (): Promise<User[]> => {
-  
-  const res = await fetch("http://localhost:4080/api/user/", { method: "GET",
-  credentials: "include",});
- if (!res.ok) {
-  console.error("Fetch failed with status:", res.status, res.statusText);
-  throw new Error("Failed to fetch users");
-}
+async function fetchUsers(): Promise<User[]> {
+  const token = localStorage.getItem('authToken');
+  const res = await fetch(`${process.env.NEXT_PUBLIC_server}/api/user/`, {
+    method: "GET",
+    headers:{
+      "Content-Type": "application/json",
+      "Authorization":`Bearer ${token}`
+    },
+   // ✅ this sends cookies automatically
+  });
+
+  if (!res.ok) {
+    console.error("Fetch failed:", res.status, res.statusText);
+    throw new Error("Failed to fetch users");
+  }
 
   return res.json();
-};
+}
 
 // Function to filter users by time
 const filterUsersByTime = (users: User[], period: "1d" | "1w" | "1m") => {
@@ -31,26 +39,34 @@ const filterUsersByTime = (users: User[], period: "1d" | "1w" | "1m") => {
 
   switch (period) {
     case "1d":
-      threshold = new Date(now.getTime() - 24 * 60 * 60 * 1000); // 1 day ago
+      threshold = new Date(now.getTime() - 24 * 60 * 60 * 1000);
       break;
     case "1w":
-      threshold = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000); // 1 week ago
+      threshold = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
       break;
     case "1m":
-      threshold = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000); // 30 days ago
+      threshold = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
       break;
     default:
-      threshold = new Date(0); // all time
+      threshold = new Date(0);
   }
 
-  return users.filter(user => new Date(user.createdAt) >= threshold);
+  return users.filter((user) => new Date(user.createdAt) >= threshold);
 };
 
-const AdminPage = async () => {
-  const users = await fetchUsers();
+const AdminPage = () => {
+  const [users, setUsers] = useState<User[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
-  // Example: filter last 1 week users
+  useEffect(() => {
+    fetchUsers()
+      .then((data) => setUsers(data))
+      .catch((err) => setError(err.message));
+  }, []);
+
   const recentUsers = filterUsersByTime(users, "1w");
+
+  if (error) return <p className="text-red-600">Error: {error}</p>;
 
   return (
     <div className="p-8 mt-16">

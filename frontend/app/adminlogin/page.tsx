@@ -17,7 +17,7 @@ export default function Example() {
      e.preventDefault(); 
      console.log(formData)
      try {
-      const res = await fetch("http://localhost:4080/api/user/admin", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_server}/api/user/admin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -28,8 +28,9 @@ export default function Example() {
 
       console.log("response", data);
       if(data.success){
+        localStorage.setItem('authToken', data.token);
         router.push("/admin")
-
+   
 
       }
      } catch(errr){

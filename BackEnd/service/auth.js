@@ -1,12 +1,12 @@
 import jwt from "jsonwebtoken";
-const secret = "ankitTiwari"
+
  export function setUser(user){
     return jwt.sign({
         email:user.email
-    },secret)
+    },process.env.secret)
     
  }
 
  export function verifytoken(token){
-    return jwt.verify(token,secret); 
+    return jwt.verify(token,process.env.secret); 
  }
